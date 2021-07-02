@@ -8,3 +8,4 @@ a minimal example of end-to-end interface prototyping with arduino, serial conne
 * open index.html in browser
 * click "Connect" and choose arduino from list
 * wave your hand over the sensor left-to-right to start time tracking, right-to-left to stop again
+* the LED is indicating whether time is recorded (red) or the timer is stopped and ready (green)

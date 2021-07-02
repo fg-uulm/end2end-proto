@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <style>
+    .mono {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .gray {
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body class="mono">
+  <!-- UI für Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Time Tracker</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link btn-primary" href="#" onclick="connect()">Connect Serial</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- UI für aktuellen timer (oberer block)-->
+  <br />
+  <div class="container card p-5">
+    <h1 class="gray">Timer</h1>
+    <div class="text-center mt-5">
+      <div id="timer">
+        <div class="mono">Gestartet um <h1 id="timer_started">---</h1> Uhr</div>
+        <br /><br />
+        <div class="mono">Dauer <h1 id="timer_elapsed">---</h1> (hh:mm:ss.ms)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI für liste der getrackten zeiten (unterer block) -->
+  <br /><br />
+  <div class="container card p-5">
+    <h1 class="gray">Zuletzt aufgezeichnete Arbeitszeiten</h1>
+    <div class="text-left mt-5">
+      <ul id="list" class="mono"></ul>
+      <br/>
+      <div>
+        <strong>Total</strong> <h1 id="sum" style="text-decoration: overline;">---</h1>
+      </div>
+    </div>
+  </div>
+
+  <script src="serial_helper.js"></script>
+  <script src="timetracker.js"></script>
+</body>
+</html>
